@@ -1,0 +1,4 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "livePreview.defaultPreviewPath": "/templates/drag-drop.html"
+}

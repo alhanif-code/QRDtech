@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRDtech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(16, 55, 138);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(17, 105, 149);
+        }
+
+        .logo {
+            margin-top: 1vh;
+            padding: 0.5vw;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+
+        h1 {
+            margin: 0.5rem;
+            font-size: 3.5vw;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 0.5vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: space-around;
+            gap: 2vw;
+        }
+
+        li {
+            display: flex;
+            align-items: space-around;
+            padding-top: 0.5vw;
+            padding-bottom: 0.5vw;
+            padding-left: 7vw;
+            padding-right: 7vw;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: rgb(3, 8, 80);
+            color: whitesmoke;
+            padding: 0.5vw 1vw;
+            transition: 0.3s;
+        }
+        
+        .input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(94, 100, 115);
+        }
+
+        .userfile {
+            max-width: 400px;
+            height: 200px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            color: #cccccc;
+            border: 4px dashed #009578;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+        
+        .drop-zone--over {
+            border-style: solid;
+            background-color: #eeeeee;
+        }
+        
+        .drop-zone-input {
+            display: none;
+        }
+        
+        .dropZoneText {
+            font-size: 20px;
+        }
+
+        #generateQRButton {
+            padding: 10px 20px;
+            font-size: 10px;
+            color: white;
+            background-color: rgb(13, 137, 199);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self:center;
+        }
+        
+        </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">QRDtech</div>
+            <br>
+            <ul class="nav-links">
+                <li><a href="/" _self>Home</a></li>
+                <li><a href="/url-link" _self>Url</a></li>
+                <li><a href="/login" _self>Login</a></li>
+                <li><a href="/sign-in" _self>SignIn</a></li>
+            </ul>
+        </div>
+
+        <div class="input">
+            <div class="enter">
+                <label for="user">Name:</label>
+                <br>
+                <input type="text" id="user">
+                <br>
+                <label for="filename">Filename:</label>
+                <br>
+                <input type="text" id="filename">
+            </div>
+            
+            <div class="drop">
+                <label for="userfile" class="userfile" id="dropzone">
+                    <span class="dropZoneText">Put/drop your file here</span>
+                    <input type="file" name="myuserfile" class="drop-zone-input" id="myuserfile">
+                </label>
+                <br>
+                <br>
+                <button id="generateQRButton" onclick="generateQR()">Create QR</button>
+            </div>
+        </div>
+
+        <div class="show">
+            <h3>QR Code will be generated here</h3>
+            <button id="download" onclick="downloadQR()">Download QR Code</button>
+            <div id="QR">
+                <img id="qrImage" src="" alt="">
+            </div>
+        </div>
+        
+    <script src="{{url_for('static', filename='upload.js')}}"></script>
+</body>
+
+</html>

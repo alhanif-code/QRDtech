@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(16, 55, 138);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(17, 105, 149);
+            padding: 1vw;
+        }
+
+        .logo {
+            margin-top: 1vh;
+            padding: 0.5vw;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: black;
+        }
+
+        .register {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5vw;
+        }
+
+        .login-form,
+        .signin-form {
+            margin-top: 5vh;
+            background-color: rgb(17, 105, 149);
+            padding: 2vw;
+            border: 4px solid rgb(19, 10, 101);
+            border-radius: 10px;
+            color: black;
+        }
+
+        span {
+            justify-self: center;
+            margin-bottom: 1vh;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 0.8rem;
+            margin-bottom: 0.5vh;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5vw;
+            margin-bottom: 1vh;
+            margin-right: 0.5vh;
+            border: 1px solid rgb(19, 10, 101);
+            border-radius: 5px;
+        }
+
+        button {
+            justify-self: center;
+            padding: 0.5vw 1vw;
+            border-radius: 5px;
+        }
+
+
+        input[type="text"],
+        input[type="password"] {
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">QRDtech</div>
+        </div>
+    </div>
+
+    <div class="register">
+        <form method="POST" action="/login" class="login-form">
+            <span>Login</span>
+            <br>
+            <label for="username/email">Username/Email:</label>
+            <br>
+            <input type="text" id="username/email" name="useremail" placeholder="Enter your username or email" required>
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="login_password" name="login_password" placeholder="Enter your password" required>
+            <br>
+            <br>
+            <button type="button" onclick="checkLogin()">submit</button>
+            <br>
+        </form>
+        <form method="POST" action="/register" class="register-form">
+            <span>Sign In</span>
+            <br>
+            <label for="username">Username:</label>
+            <br>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="register_password" name="register_password" placeholder="Enter your password" required>
+            <br>
+            <br>
+            <button type="button" onclick="checkRegister()">submit</button>
+        </form>
+
+        <script>
+
+        </script>
+    </div>
+    <script src="{{ url_for('static', filename='register.js') }}"></script>
+</body>
+
+</html>

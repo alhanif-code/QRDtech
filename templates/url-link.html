@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRDtech</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(2, 21, 63);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: rgb(13, 137, 199);
+            padding: 0.5vw;
+            align-content: space-evenly;
+        }
+
+        h1 {
+            font-size: 3.5vw;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.6vw;
+            color: black;
+            margin-left: auto;
+            border: 2px solid rgb(3, 8, 80);
+            border-radius: 25%;
+            padding: 1vw;
+        }
+
+        a:hover {
+            background-color: rgb(3, 8, 80);
+            color: whitesmoke;
+            transition: 0.3s;
+            font-size: 2vw;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10vw;
+            color: rgb(196, 196, 194);
+        }
+
+        #attention {
+            font-size: 2vw;
+            display: block;
+        }
+
+        .show {
+            margin-top: 4.5vw;
+            border: 2px dotted rgb(239, 240, 242);
+            background-color: rgb(13, 137, 199);
+            padding-top: 3vw;
+            padding-bottom: 3vw;
+            padding-right: 6vw;
+            padding-left: 6vw;
+        }
+
+        #QR {
+            padding: 16.5vw;
+            margin-top: 2vw;
+            background-color: rgb(20, 21, 21);
+            border: 5px dotted rgb(79, 83, 128);
+        }
+
+        #download {
+            display: block;
+            margin: 0 auto;
+            padding: 1vw;
+            font-size: 1.5vw;
+            border: 2px solid rgb(3, 8, 80);
+            border-radius: 25%;
+            background-color: rgb(13, 137, 199);
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>QRDtech</h1>
+        <a href="alhanif8108@gmail.com">for critics</a>
+    </div>
+
+    <div class="container">
+        <div id="attention">
+            <h2>Create QR code:</h2>
+
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" placeholder="Enter your name" id="name">
+            <br>
+
+            <label for="url">URL:</label>
+            <br>
+            <input type="text" placeholder="Enter your url" id="url">
+            <br>
+
+            <label for="filename">File Name:</label>
+            <br>
+            <input type="text" placeholder="Enter your name file" id="filename">
+            <br>
+            <br>
+            <button onclick="generateQR()">Generate QR Code</button>
+        </div>
+
+        <div class="show">
+            <h3>QR Code will be generated here</h3>
+            <button id="download" onclick="downloadQR()">Download QR Code</button>
+            <div id="QR">
+                <img id="qrImage" src="" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

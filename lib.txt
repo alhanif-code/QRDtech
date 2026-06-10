@@ -1,0 +1,5 @@
+flask
+qrcode[pil]
+flask-mysqldb
+bcrypt
+flask-login
