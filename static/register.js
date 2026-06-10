@@ -1,3 +1,5 @@
+const name = 'hanif'
+
 function checkLogin(){
     const username = document.getElementById('username/email').value;
     const password = document.getElementById('login_password').value;
